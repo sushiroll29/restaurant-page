@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+  }
+
+html,
+body {
+  height: 100%;
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  color: var(--dark-grey);
+}
+
+#content {
+    background-color: mistyrose;
+}
+
+img {
+    width: 550px;
+    height: 415px;
+}

@@ -1,3 +1,7 @@
-import { initialPage } from "./initialPage";
+import { homePage } from "./homePage";
+import { menuPage } from "./menuPage";
+import { contactPage } from "./contactPage";
 
-initialPage();
+homePage();
+menuPage();
+contactPage();

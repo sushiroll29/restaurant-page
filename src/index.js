@@ -1,1 +1,3 @@
-console.log("i'm alive");
+import { initialPage } from "./initialPage";
+
+initialPage();

@@ -12,9 +12,20 @@ body {
 
 #content {
     background-color: rgb(237, 237, 237);
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#main, #homeFeed, #menuFeed, #contactFeed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
-    width: 550px;
-    height: 415px;
+    width: 450px;
+    height: 313px;
 }

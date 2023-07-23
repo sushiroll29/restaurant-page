@@ -2,55 +2,60 @@ import { homePage } from "./homePage";
 import { menuPage } from "./menuPage";
 import { contactPage } from "./contactPage";
 
-// homePage();
 const container = document.querySelector("#content");
 container.appendChild(createHeader());
 container.appendChild(createMain());
 
 homePage();
-let choice = "home";
-
-const pages = document.querySelectorAll(".page");
-// console.log(pages);
-pages.forEach((page) =>
-  page.addEventListener("click", () => {
-    choice = page.textContent.toLowerCase();
-    console.log(choice);
-    switch (choice) {
-      case "home":
-        homePage();
-        break;
-      case "menu":
-        menuPage();
-        break;
-      case "contact":
-        contactPage();
-        break;
-    }
-  })
-);
 
 function createHeader() {
   const header = document.createElement("header");
   header.classList.add("header");
   header.id = "header";
 
+  const restaurantName = document.createElement("h1");
+  restaurantName.textContent = "Cartoon Restaurant";
+
+  header.appendChild(restaurantName);
+
+  const pageContainer = document.createElement("div");
+  pageContainer.id = "pageContainer";
+  header.appendChild(pageContainer);
+
   const homeBtn = document.createElement("button");
   homeBtn.textContent = "Home";
   homeBtn.classList.add("page");
-  header.appendChild(homeBtn);
+  homeBtn.classList.add("active");
+  homeBtn.addEventListener("click", (e) => {
+    setActivePage(homeBtn);
+    homePage();
+  });
+  pageContainer.appendChild(homeBtn);
 
   const menuBtn = document.createElement("button");
   menuBtn.textContent = "Menu";
   menuBtn.classList.add("page");
-  header.appendChild(menuBtn);
+  menuBtn.addEventListener("click", (e) => {
+    setActivePage(menuBtn);
+    menuPage();
+  });
+  pageContainer.appendChild(menuBtn);
 
   const contactBtn = document.createElement("button");
   contactBtn.textContent = "Contact";
   contactBtn.classList.add("page");
-  header.appendChild(contactBtn);
+  contactBtn.addEventListener("click", (e) => {
+    setActivePage(contactBtn);
+    contactPage();
+  });
+  pageContainer.appendChild(contactBtn);
 
   return header;
+}
+
+function setActivePage(page) {
+  document.querySelector(".active").classList.remove("active"); //removes the 'active' class for the previously active page
+  page.classList.add("active"); //sets the new page as active
 }
 
 function createMain() {
@@ -59,22 +64,3 @@ function createMain() {
   main.id = "main";
   return main;
 }
-
-// menuBtn.addEventListener("click", () => {
-//     // console.log(homePage.homeContainer);
-//     switch(choice) {
-//         case 'home':
-//             homePage();
-//             break;
-//         case 'menu':
-//             menuPage();
-//             break;
-//         case 'contact' :
-//             contactPage();
-//             break;
-//     }
-// });
-
-// homePage();
-// menuPage();
-// contactPage();

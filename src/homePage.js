@@ -7,11 +7,6 @@ function createHome() {
 
     main.appendChild(homeContainer);
 
-    const restaurantName = document.createElement("h1");
-    restaurantName.textContent = "Cartoon Restaurant";
-
-    homeContainer.appendChild(restaurantName);
-
     return homeContainer;
   }
 }

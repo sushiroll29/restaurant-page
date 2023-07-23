@@ -10,7 +10,7 @@ function createContact() {
 
     main.append(contactTitle);
 
-    return container;
+    return contactContainer;
   }
 }
 

@@ -9,16 +9,37 @@ function createMenu() {
 
     const menuTitle = document.createElement("h1");
     menuTitle.textContent = "Menu";
-    menuContainer.append(menuTitle);
+    menuContainer.appendChild(menuTitle);
+
+    //BREAKFAST
+
+    const breakfast = document.createElement("h2");
+    breakfast.textContent = "Breakfast";
+    menuContainer.appendChild(breakfast);
 
     menuContainer.appendChild(createMenuItem("breakfast1", "Mushu's Porridge"));
     menuContainer.appendChild(
-      createMenuItem("breakfast2", "Scooby-Doo's Giant Sandwich")
+      createMenuItem("breakfast2", "Shaggy's Giant Sandwich")
     );
     menuContainer.appendChild(createMenuItem("breakfast3", "Remi's Omelette"));
     menuContainer.appendChild(
       createMenuItem("breakfast4", "Howl's Bacon&Eggs")
     );
+
+    //MAIN COURSES
+
+    const mainCourses = document.createElement("h2");
+    mainCourses.textContent = "Main Courses";
+    menuContainer.appendChild(mainCourses);
+
+    menuContainer.appendChild(createMenuItem("naruto", "Ichiraku's Ramen"));
+    menuContainer.appendChild(createMenuItem("turkey", "Tom's Roasted Turkey"));
+
+    //DESSERTS
+
+    const desserts = document.createElement("h2");
+    desserts.textContent = "Desserts";
+    menuContainer.appendChild(desserts);
 
     return menuContainer;
   }

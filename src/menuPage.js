@@ -1,20 +1,23 @@
 function createMenu() {
-  const container = document.querySelector("#content");
+  const main = document.querySelector("#main");
 
   if (!document.getElementById("menuFeed")) {
     const menuContainer = document.createElement("div");
     menuContainer.id = "menuFeed";
 
-    container.appendChild(menuContainer);
+    main.appendChild(menuContainer);
 
     const menuTitle = document.createElement("h1");
     menuTitle.textContent = "Menu";
     menuContainer.append(menuTitle);
 
+    menuContainer.appendChild(createMenuItem("breakfast1", "Mushu's Porridge"));
     menuContainer.appendChild(
-      createMenuItem("breakfast1", "Mulan Porridge"));
+      createMenuItem("breakfast2", "Scooby-Doo's Giant Sandwich")
+    );
+    menuContainer.appendChild(createMenuItem("breakfast3", "Remi's Omelette"));
     menuContainer.appendChild(
-      createMenuItem("breakfast2", "Scooby-Doo Giant Sandwich")
+      createMenuItem("breakfast4", "Howl's Bacon&Eggs")
     );
 
     return menuContainer;
@@ -35,12 +38,12 @@ function createMenu() {
 
     return menuItem;
   }
-};
+}
 
 function menuPage() {
-    const main = document.getElementById("main");
-    main.textContent = "";
-    main.appendChild(createMenu());
+  const main = document.getElementById("main");
+  main.textContent = "";
+  main.appendChild(createMenu());
 }
 
 export { menuPage };

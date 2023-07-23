@@ -1,26 +1,40 @@
 const menuPage = () => {
-    const container = document.querySelector('#content');
+  const container = document.querySelector("#content");
 
-    const menuTitle = document.createElement('h1');
+  if (!document.getElementById("menuFeed")) {
+    const menuContainer = document.createElement("div");
+    menuContainer.id = "menuFeed";
+
+    container.appendChild(menuContainer);
+
+    const menuTitle = document.createElement("h1");
     menuTitle.textContent = "Menu";
+    menuContainer.append(menuTitle);
 
-    const breakfast1 = document.createElement("img");
-    breakfast1.src = "./assets/breakfast1.jpeg";
+    menuContainer.appendChild(
+      createMenuItem("breakfast1", "Mulan Porridge"));
+    menuContainer.appendChild(
+      createMenuItem("breakfast2", "Scooby-Doo Giant Sandwich")
+    );
 
-    const breakfast1Description = document.createElement("p");
-    breakfast1Description.textContent = "Naruto R = Best R"
+    return menuContainer;
+  }
 
-    const breakfast2 = document.createElement("img");
-    breakfast2.src = "./assets/breakfast2.jpeg";
+  function createMenuItem(title, description) {
+    const menuItem = document.createElement("div");
 
-    const breakfast2Description = document.createElement("p");
-    breakfast2Description.textContent = "Tom&Jerry Turkey"
+    const menuItemImage = document.createElement("img");
+    menuItemImage.src = `./assets/${title.toLowerCase()}.jpeg`;
+    menuItemImage.alt = `${title}`;
 
-    container.append(menuTitle, breakfast1, breakfast1Description, breakfast2, breakfast2Description);
-    // container.appendChild(food1);
-    // container.appendChild(food1Description);
+    const menuItemDescription = document.createElement("p");
+    menuItemDescription.textContent = description;
 
-    return container;
-}
+    menuItem.appendChild(menuItemImage);
+    menuItem.appendChild(menuItemDescription);
+
+    return menuItem;
+  }
+};
 
 export { menuPage };

@@ -1,4 +1,4 @@
-const menuPage = () => {
+function createMenu() {
   const container = document.querySelector("#content");
 
   if (!document.getElementById("menuFeed")) {
@@ -36,5 +36,11 @@ const menuPage = () => {
     return menuItem;
   }
 };
+
+function menuPage() {
+    const main = document.getElementById("main");
+    main.textContent = "";
+    main.appendChild(createMenu());
+}
 
 export { menuPage };

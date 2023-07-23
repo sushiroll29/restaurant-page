@@ -4,20 +4,8 @@ import { contactPage } from "./contactPage";
 
 // homePage();
 const container = document.querySelector('#content');
-
-const homeBtn = document.createElement('button');
-homeBtn.textContent = "Home";
-homeBtn.classList.add('page');
-
-const menuBtn = document.createElement('button');
-menuBtn.textContent = "Menu";
-menuBtn.classList.add('page');
-
-const contactBtn = document.createElement('button');
-contactBtn.textContent = "Contact";
-contactBtn.classList.add('page');
-
-container.append(homeBtn, menuBtn, contactBtn);
+container.appendChild(createHeader());
+container.appendChild(createMain());
 
 homePage();
 let choice = 'home';
@@ -40,6 +28,36 @@ pages.forEach(page => page.addEventListener('click', () => {
     
     }
 }))
+
+function createHeader() {
+    const header = document.createElement("header");
+    header.classList.add("header");
+    header.id = "header";
+
+    const homeBtn = document.createElement('button');
+homeBtn.textContent = "Home";
+homeBtn.classList.add('page');
+header.appendChild(homeBtn);
+
+const menuBtn = document.createElement('button');
+menuBtn.textContent = "Menu";
+menuBtn.classList.add('page');
+header.appendChild(menuBtn);
+
+const contactBtn = document.createElement('button');
+contactBtn.textContent = "Contact";
+contactBtn.classList.add('page');
+header.appendChild(contactBtn);
+
+return header;
+}
+
+function createMain() {
+    const main = document.createElement("main");
+    main.classList.add("main");
+    main.id = "main";
+    return main;
+  }
 
 // menuBtn.addEventListener("click", () => {
 //     // console.log(homePage.homeContainer);

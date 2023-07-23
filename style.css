@@ -10,19 +10,25 @@ body {
   color: var(--dark-grey);
 }
 
-#content {
-    background-color: rgb(237, 237, 237);
-    display: flex;
+#main, #homeFeed, #menuFeed, #contactFeed, #content, #header {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#main, #homeFeed, #menuFeed, #contactFeed {
+#content {
+  background-color: rgb(237, 237, 237);
+}
+
+#pageContainer {
+  width: 50%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.active {
+  background-color: red;
 }
 
 img {

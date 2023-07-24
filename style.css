@@ -1,3 +1,7 @@
+:root {
+  --grey: rgb(237, 237, 237);
+}
+
 * {
     margin: 0;
   }
@@ -6,8 +10,14 @@ html,
 body {
   height: 100%;
   font-size: 20px;
-  font-family: "Quicksand", sans-serif;
-  color: var(--dark-grey);
+  /* font-family: "Quicksand", sans-serif; */
+  font-family: "Comic Neue", sans-serif;
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/restaurant.png');
+  background-attachment: fixed;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 #main, #homeFeed, #menuFeed, #contactFeed, #content, #header {
@@ -17,8 +27,21 @@ body {
   align-items: center;
 }
 
+#header {
+  background-color: aqua;
+  width: 100%;
+}
+
 #content {
-  background-color: rgb(237, 237, 237);
+  text-align: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+#footer {
+  width: 100%;
+  text-align: center;
+  background-color: var(--grey);
 }
 
 #pageContainer {
@@ -34,4 +57,31 @@ body {
 img {
     width: 450px;
     height: 313px;
+}
+
+
+#homeFeed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 525px;
+  width: 618px; */
+  height: 70vh;
+  width: 50vw;
+  background-color: rgba(237, 237, 237, 0.8);
+  padding: 1%;
+  font-size: 18px;
+}
+
+#homeFeed img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+  margin: 10px 0;
+}
+
+
+#homeFeed > p:last-child {
+  margin-top: 5%;
 }

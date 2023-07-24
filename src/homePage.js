@@ -2,13 +2,31 @@ function createHome() {
   const main = document.querySelector("#main");
 
   if (!document.getElementById("homeFeed")) {
-    const homeContainer = document.createElement("div");
-    homeContainer.id = "homeFeed";
+    const homeFeed = document.createElement("div");
+    homeFeed.id = "homeFeed";
 
-    main.appendChild(homeContainer);
+    main.appendChild(homeFeed);
 
-    return homeContainer;
+    homeFeed.appendChild(addText("Ever wondered what the food from your favourite cartoon tastes like?"));
+
+    const restaurantPicture = document.createElement("img");
+    restaurantPicture.src = "./assets/homePageImage.jpeg";
+    restaurantPicture.alt = "home page image";
+    homeFeed.appendChild(restaurantPicture);
+
+    
+    homeFeed.appendChild(addText("You can finally try it at Cartoon Restaurant!"));
+    homeFeed.appendChild(addText("We offer a variety of dishes from all over the cartoon world."));
+    homeFeed.appendChild(addText("Check out our menu and make a reservation today!"));
+
+    return homeFeed;
   }
+}
+
+function addText(text) {
+    const textToAdd = document.createElement("p");
+    textToAdd.textContent = text;
+    return textToAdd; 
 }
 
 function homePage() {
@@ -16,5 +34,4 @@ function homePage() {
   main.textContent = "";
   main.appendChild(createHome());
 }
-
 export { homePage };

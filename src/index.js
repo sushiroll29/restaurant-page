@@ -5,6 +5,7 @@ import { contactPage } from "./contactPage";
 const container = document.querySelector("#content");
 container.appendChild(createHeader());
 container.appendChild(createMain());
+container.appendChild(createFooter());
 
 homePage();
 
@@ -53,14 +54,26 @@ function createHeader() {
   return header;
 }
 
-function setActivePage(page) {
-  document.querySelector(".active").classList.remove("active"); //removes the 'active' class for the previously active page
-  page.classList.add("active"); //sets the new page as active
-}
-
 function createMain() {
   const main = document.createElement("main");
   main.classList.add("main");
   main.id = "main";
   return main;
 }
+
+function createFooter() {
+    const footer = document.createElement("footer");
+    footer.classList.add("footer");
+    footer.id = "footer";
+
+    const footerText = document.createElement("h3");
+    footerText.textContent = "footer";
+    footer.appendChild(footerText);
+
+    return footer;
+}
+
+function setActivePage(page) {
+    document.querySelector(".active").classList.remove("active"); //removes the 'active' class for the previously active page
+    page.classList.add("active"); //sets the new page as active
+  }

@@ -7,9 +7,9 @@ function createMenu() {
 
     main.appendChild(menuContainer);
 
-    const menuTitle = document.createElement("h1");
-    menuTitle.textContent = "Menu";
-    menuContainer.appendChild(menuTitle);
+    // const menuTitle = document.createElement("h1");
+    // menuTitle.textContent = "Menu";
+    // menuContainer.appendChild(menuTitle);
 
     //BREAKFAST
 
@@ -17,12 +17,16 @@ function createMenu() {
     breakfast.textContent = "Breakfast";
     menuContainer.appendChild(breakfast);
 
-    menuContainer.appendChild(createMenuItem("breakfast1", "Mushu's Porridge"));
-    menuContainer.appendChild(
+    const breakfastContainer = document.createElement("div");
+    breakfastContainer.classList.add("menuSection");
+    menuContainer.appendChild(breakfastContainer);
+
+    breakfastContainer.appendChild(createMenuItem("breakfast1", "Mushu's Porridge"));
+    breakfastContainer.appendChild(
       createMenuItem("breakfast2", "Shaggy's Giant Sandwich")
     );
-    menuContainer.appendChild(createMenuItem("breakfast3", "Remi's Omelette"));
-    menuContainer.appendChild(
+    breakfastContainer.appendChild(createMenuItem("breakfast3", "Remy's Omelette"));
+    breakfastContainer.appendChild(
       createMenuItem("breakfast4", "Howl's Bacon&Eggs")
     );
 
@@ -32,14 +36,29 @@ function createMenu() {
     mainCourses.textContent = "Main Courses";
     menuContainer.appendChild(mainCourses);
 
-    menuContainer.appendChild(createMenuItem("naruto", "Ichiraku's Ramen"));
-    menuContainer.appendChild(createMenuItem("turkey", "Tom's Roasted Turkey"));
+    const mainCoursesContainer = document.createElement("div");
+    mainCoursesContainer.classList.add("menuSection");
+    menuContainer.appendChild(mainCoursesContainer);
+
+    mainCoursesContainer.appendChild(createMenuItem("naruto", "Ichiraku's Ramen"));
+    mainCoursesContainer.appendChild(createMenuItem("turkey", "Tom's Roasted Turkey"));
+    mainCoursesContainer.appendChild(createMenuItem("nacoo", "Ron's Naco"));
+    mainCoursesContainer.appendChild(createMenuItem("bobburger", "Bob's Burger of the Day"));
 
     //DESSERTS
 
     const desserts = document.createElement("h2");
     desserts.textContent = "Desserts";
     menuContainer.appendChild(desserts);
+
+    const dessertsContainer = document.createElement("div");
+    dessertsContainer.classList.add("menuSection");
+    menuContainer.appendChild(dessertsContainer);
+
+    dessertsContainer.appendChild(createMenuItem("donut", "Homer's Donuts"));
+    dessertsContainer.appendChild(createMenuItem("cake", "Sleeping Beauty's Cake"));
+    dessertsContainer.appendChild(createMenuItem("jawbreaker", "Ed, Edd & Eddy's Jawbreaker"));
+    dessertsContainer.appendChild(createMenuItem("cakepizza", "Soos's Cake-Flavoured Pizza"));
 
     return menuContainer;
   }

@@ -15,7 +15,7 @@ function createHome() {
     homeFeed.appendChild(restaurantPicture);
 
     
-    homeFeed.appendChild(addText("You can finally try it at Cartoon Restaurant!"));
+    homeFeed.appendChild(addText("You can now try it at The Cartoon Diner!"));
     homeFeed.appendChild(addText("We offer a variety of dishes from all over the cartoon world."));
     homeFeed.appendChild(addText("Check out our menu and make a reservation today!"));
 

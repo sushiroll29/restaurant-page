@@ -15,7 +15,8 @@ function createHeader() {
   header.id = "header";
 
   const restaurantName = document.createElement("h1");
-  restaurantName.textContent = "Cartoon Restaurant";
+  restaurantName.id = "restaurantName";
+  restaurantName.textContent = "The Cartoon Diner";
 
   header.appendChild(restaurantName);
 
@@ -67,7 +68,7 @@ function createFooter() {
     footer.id = "footer";
 
     const footerText = document.createElement("h3");
-    footerText.textContent = "footer";
+    footerText.textContent = "Copyright © 2023 The Cartoon Diner";
     footer.appendChild(footerText);
 
     return footer;

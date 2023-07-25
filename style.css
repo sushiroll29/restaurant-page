@@ -40,6 +40,7 @@ html {
 
 #main {
   max-width: 400px;
+  margin: 2rem 0;
 }
 
 #header {
@@ -92,7 +93,7 @@ img {
   background-color: var(--transparent-grey-light);
   color: white;
   padding: 1%;
-  font-size: 18px;
+  font-size: 1.4rem;
 }
 
 #homeFeed img {
@@ -135,8 +136,37 @@ img {
   font-size: 4.5rem;
 }
 
+#menuFeed {
+  background-color: var(--transparent-grey-light);
+  color: white;
+  padding: 3% 6%;
+}
+
+#menuFeed h2 {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.menuSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  font-size: 1.4rem;
+}
+
+.menuSection img {
+  max-height: 200px;
+  max-width: 400px;
+}
+
+.menuSection img:hover {
+  cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s ease-in;
+}
+
 @keyframes jump {
   0%   {transform: translate(0, -10%)}
-  40%  {transform: translate(0,-25%)}
-  100% {transform: translate(0, -40%)}
+  40%  {transform: translate(0,-15%)}
+  100% {transform: translate(0, -20%)}
 }

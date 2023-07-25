@@ -63,18 +63,18 @@ function createMain() {
 }
 
 function createFooter() {
-    const footer = document.createElement("footer");
-    footer.classList.add("footer");
-    footer.id = "footer";
+  const footer = document.createElement("footer");
+  footer.classList.add("footer");
+  footer.id = "footer";
 
-    const footerText = document.createElement("h3");
-    footerText.textContent = "Copyright © 2023 The Cartoon Diner";
-    footer.appendChild(footerText);
+  const footerText = document.createElement("h3");
+  footerText.textContent = "Copyright © 2023 The Cartoon Diner";
+  footer.appendChild(footerText);
 
-    return footer;
+  return footer;
 }
 
 function setActivePage(page) {
-    document.querySelector(".active").classList.remove("active"); //removes the 'active' class for the previously active page
-    page.classList.add("active"); //sets the new page as active
-  }
+  document.querySelector(".active").classList.remove("active"); //removes the 'active' class for the previously active page
+  page.classList.add("active"); //sets the new page as active
+}

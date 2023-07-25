@@ -1,7 +1,7 @@
 :root {
   --grey: rgb(237, 237, 237);
   --transparent-grey: rgba(47, 47, 47, 0.9);
-  --transparent-grey-light: rgba(47, 47, 47, 0.7)
+  --transparent-grey-light: rgba(47, 47, 47, 0.7);
 }
 
 *,
@@ -17,7 +17,11 @@ body {
   height: 100%;
   font-size: 13px;
   font-family: "Niramit", sans-serif;
-  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('./assets/restaurant.png');
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("./assets/restaurant.png");
   background-attachment: fixed;
   background-size: contain;
 }
@@ -27,20 +31,22 @@ html {
   line-height: 1.2;
 }
 
-/* body{
-  
-} */
-
-#main, #homeFeed, #menuFeed, #contactFeed, #content, #header {
+#main,
+#homeFeed,
+#menuFeed,
+#contactFeed,
+#content,
+#header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#main {
-  max-width: 400px;
-  margin: 2rem 0;
+#content {
+  text-align: center;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 #header {
@@ -49,10 +55,14 @@ html {
   width: 100%;
 }
 
-#content {
-  text-align: center;
-  justify-content: space-between;
-  height: 100vh;
+#restaurantName {
+  margin: 10px 0;
+  font-size: 4.5rem;
+}
+
+#main {
+  max-width: 400px;
+  margin: 2rem 0;
 }
 
 #footer {
@@ -69,6 +79,26 @@ html {
   justify-content: stretch;
 }
 
+#pageContainer {
+  margin: 10px 0px;
+}
+
+#pageContainer > button {
+  flex-grow: 1;
+  padding: 7px 14px;
+  color: white;
+  font-family: "Niramit", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px white;
+  background-color: rgba(47, 47, 47, 0);
+}
+
+#pageContainer > button:hover {
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  animation: jump 0.5s linear alternate infinite;
+}
 
 .active {
   text-decoration: underline;
@@ -76,18 +106,17 @@ html {
 }
 
 img {
-    width: 450px;
-    height: 313px;
+  width: 450px;
+  height: 313px;
 }
 
+/* HOME */
 
 #homeFeed {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 525px;
-  width: 618px; */
   height: 70vh;
   width: 50vw;
   background-color: var(--transparent-grey-light);
@@ -103,38 +132,11 @@ img {
   margin: 10px 0;
 }
 
-
 #homeFeed > p:last-child {
   margin-top: 5%;
 }
 
-#pageContainer {
-  margin: 10px 0px;
-}
-
-#pageContainer > button {
-  flex-grow: 1;
-  padding: 7px 14px;
-  color: white;
-  font-family: "Niramit", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  border: 2px white;
-  /* border-radius: 9px; */
-  background-color: rgba(47, 47, 47, 0);
-}
-
-#pageContainer > button:hover {
-  /* scale: 110%; */
-  cursor: pointer;
-  transform-origin: 50% 50%;
-  animation: jump .5s linear alternate infinite;
-}
-
-#restaurantName {
-  margin: 10px 0;
-  font-size: 4.5rem;
-}
+/* MENU */
 
 #menuFeed {
   background-color: var(--transparent-grey-light);
@@ -161,9 +163,11 @@ img {
 
 .menuSection img:hover {
   cursor: pointer;
-    transform: scale(1.05);
-    transition: 0.2s ease-in;
+  transform: scale(1.05);
+  transition: 0.2s ease-in;
 }
+
+/* CONTACT */
 
 #contactFeed {
   background-color: var(--transparent-grey-light);
@@ -186,8 +190,16 @@ img {
   margin: 1.3rem 0;
 }
 
+/* PAGE SWITCH ANIMATIONS */
+
 @keyframes jump {
-  0%   {transform: translate(0, -10%)}
-  40%  {transform: translate(0,-15%)}
-  100% {transform: translate(0, -20%)}
+  0% {
+    transform: translate(0, -10%);
+  }
+  40% {
+    transform: translate(0, -15%);
+  }
+  100% {
+    transform: translate(0, -20%);
+  }
 }
